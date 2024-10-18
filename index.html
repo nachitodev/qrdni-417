@@ -119,10 +119,14 @@
         }
 
         function downloadCanvas() {
+            const apellido = document.getElementById("inputApellido").value.toUpperCase();
+            const nombre = document.getElementById("inputNombre").value.toUpperCase();
+            const dni = document.getElementById("inputDNI").value;
+
             const canvas = document.getElementById("canvasCodigo");
             const link = document.createElement('a');
             link.href = canvas.toDataURL("image/png");
-            link.download = 'codigoPDF417.png';
+            link.download = `{apellido}-{nombre}-{dni}-qr.png`;
             link.click();
         }
     </script>
